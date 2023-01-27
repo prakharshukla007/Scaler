@@ -20,7 +20,7 @@ public class LinkedList {
     }
 
     /**
-     * static head pointer of LinkedList class
+     * head pointer of LinkedList class
      */
     Node head;
     /**
