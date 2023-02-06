@@ -151,6 +151,15 @@ public class LinkedList {
         ls.insertAtHead(3000);
         ls.printList(ls.head);
         ls.printInReverse(ls.head);
+        System.out.println();
+
+        LinkedList ls1 = new LinkedList();
+        ls1.head = new Node(17);
+        ls1.head.next = new Node(4);
+        ls1.head.next.next = new Node(12);
+        ls1.head.next.next.next = new Node(10);
+        ls1.head.next.next.next.next = new Node(5);
+        ls1.printInReverse(ls1.head);
     }
 
 }
