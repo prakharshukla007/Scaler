@@ -1,4 +1,4 @@
-package matrices;
+package intermediate.matrices;
 
 import java.util.ArrayList;
 

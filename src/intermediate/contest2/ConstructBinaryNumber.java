@@ -1,4 +1,4 @@
-package contest2;
+package intermediate.contest2;
 
 public class ConstructBinaryNumber {
 

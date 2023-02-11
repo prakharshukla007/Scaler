@@ -1,4 +1,4 @@
-package carryForward;
+package intermediate.carryForward;
 
 public class EvenSubarrays {
 

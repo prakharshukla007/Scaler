@@ -1,4 +1,4 @@
-package contest1;
+package intermediate.contest1;
 
 import java.util.ArrayList;
 import java.util.List;

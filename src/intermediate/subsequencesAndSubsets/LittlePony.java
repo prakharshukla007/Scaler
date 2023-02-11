@@ -1,4 +1,4 @@
-package subsequencesAndSubsets;
+package intermediate.subsequencesAndSubsets;
 
 public class LittlePony {
 

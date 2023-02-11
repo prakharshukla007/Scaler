@@ -1,4 +1,4 @@
-package subarrays;
+package intermediate.subarrays;
 
 import java.util.ArrayList;
 import java.util.Arrays;

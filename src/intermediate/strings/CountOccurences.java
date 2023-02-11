@@ -1,4 +1,4 @@
-package strings;
+package intermediate.strings;
 
 public class CountOccurences {
 

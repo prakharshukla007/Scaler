@@ -1,4 +1,4 @@
-package interviewProblems;
+package intermediate.interviewProblems;
 
 public class JosephusProblem {
 

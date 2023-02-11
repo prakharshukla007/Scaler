@@ -1,4 +1,4 @@
-package bitManipulation;
+package intermediate.bitManipulation;
 
 public class XORSum {
 

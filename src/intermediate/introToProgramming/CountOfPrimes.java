@@ -1,4 +1,4 @@
-package introToProgramming;
+package intermediate.introToProgramming;
 
 public class CountOfPrimes {
     public static void main(String[] args) {

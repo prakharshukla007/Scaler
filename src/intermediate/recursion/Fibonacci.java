@@ -1,4 +1,4 @@
-package recursion;
+package intermediate.recursion;
 
 public class Fibonacci {
 

@@ -1,4 +1,4 @@
-package contest2;
+package intermediate.contest2;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package matrices;
+package intermediate.matrices;
 
 public class RowToColumnZero {
 
