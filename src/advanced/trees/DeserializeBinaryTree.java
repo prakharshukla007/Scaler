@@ -6,7 +6,7 @@ import java.util.Queue;
 
 public class DeserializeBinaryTree {
 
-    public TreeNode solve(ArrayList<Integer> A) {
+    public static TreeNode solve(ArrayList<Integer> A) {
         Queue< TreeNode > queue = new LinkedList< >();
         queue.add(new TreeNode(A.get(0)));
         int i = 1;
