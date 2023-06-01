@@ -1,5 +1,7 @@
 package advanced.linkedLists;
 
+import java.util.ArrayList;
+
 public class PrintLL {
 
     public static void printLL(ListNode head) {
@@ -19,6 +21,16 @@ public class PrintLL {
             temp = temp.next;
         }
         return size;
+    }
+
+    public static ListNode constructLL(ArrayList<Integer> ls) {
+        ListNode head = new ListNode(ls.get(0));
+        ListNode temp = head;
+        for(int i=1; i<ls.size(); i++) {
+            temp.next = new ListNode(ls.get(i));
+            temp = temp.next;
+        }
+        return head;
     }
 
 }

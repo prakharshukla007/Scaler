@@ -22,8 +22,24 @@ public class FrogJump {
         return dp[stair] = Math.min(oneStair, twoStairs);
     }
 
+    // Can be space optimised
+    public static int frogJumpBottomUp(int n, int[] heights) {
+        int[] dp = new int[n];
+        dp[0] = 0;
+        dp[1] = Math.abs(heights[0] - heights[1]);
+
+        for(int stair=2; stair<n; stair++) {
+            int oneStair = dp[stair-1] + Math.abs(heights[stair] - heights[stair-1]);
+            int twoStair = dp[stair-2] + Math.abs(heights[stair] - heights[stair-2]);
+
+            dp[stair] = Math.min(oneStair, twoStair);
+        }
+
+        return dp[n-1];
+    }
+
     public static void main(String[] args) {
-        System.out.println(FrogJump.frogJump(4, new int[]{10, 20, 30, 10}));
+        System.out.println(FrogJump.frogJumpBottomUp(4, new int[]{10, 20, 30, 10}));
     }
 
 }
