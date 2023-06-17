@@ -28,11 +28,10 @@ public class ContactFinder {
     public Integer findFreq(TrieNode root, String s) {
         int n = s.length();
         TrieNode cur = root;
-        int count = 0;
         for(int i=0; i<n; i++) {
             char ch = s.charAt(i);
             int idx = ch - 'a';
-            if(cur.children[idx] == null) return count;
+            if(cur.children[idx] == null) return 0;
             cur = cur.children[idx];
         }
         return cur.freq;
