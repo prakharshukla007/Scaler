@@ -4,31 +4,31 @@ public class ReverseInRange {
 
     public ListNode reverseBetween(ListNode A, int B, int C) {
         int start = B;
-        ListNode temp = A;
+        ListNode tempStart = A;
         ListNode prev = null;
         while(start > 1) {
-            prev = temp;
-            temp = temp.next;
+            prev = tempStart;
+            tempStart = tempStart.next;
             start--;
         }
 
-        ListNode temp2 = A;
+        ListNode tempLast = A;
         int endNext = C;
         while(endNext > 0) {
-            temp2 = temp2.next;
+            tempLast = tempLast.next;
             endNext--;
         }
 
         ListNode prev2 = prev;
-        ListNode cur = temp;
+        ListNode cur = tempStart;
         ListNode next;
         int count = C-B;
         while(cur != null && count > 0) {
             count--;
             next = cur.next;
-            cur.next = temp2;
+            cur.next = tempLast;
             prev2 = cur;
-            temp2 = prev2;
+            tempLast = prev2;
             cur = next;
         }
         if(prev != null) {
@@ -48,7 +48,7 @@ public class ReverseInRange {
         node1.next.next.next = new ListNode(4);
         node1.next.next.next.next = new ListNode(5);
         node1.next.next.next.next.next = new ListNode(6);
-        node1 = new ReverseInRange().reverseBetween(node1, 1, 6);
+        node1 = new ReverseInRange().reverseBetween(node1, 2, 5);
         PrintLL.printLL(node1);
     }
 

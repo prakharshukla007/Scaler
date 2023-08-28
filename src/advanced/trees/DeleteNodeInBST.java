@@ -4,7 +4,67 @@ import java.util.Stack;
 
 public class DeleteNodeInBST {
 
-    public class Pair<T, V> {
+    public TreeNode solve2(TreeNode A, int B) {
+        if(A == null) return null;
+
+        if(A.val == B) return deleteNode2(A);
+
+        TreeNode parent = null;
+        TreeNode temp = A;
+
+        while(temp != null) {
+            if(temp.val == B) {
+                if(parent.left == temp) {
+                    parent.left = deleteNode2(temp);
+                } else {
+                    parent.right = deleteNode2(temp);
+                }
+                break;
+            } else if(temp.val < B) {
+                parent = temp;
+                temp = temp.right;
+            } else {
+                parent = temp;
+                temp = temp.left;
+            }
+        }
+
+        return A;
+    }
+
+    public TreeNode deleteNode2(TreeNode node) {
+        if(node == null) return null;
+
+        //no children
+        if(node.left == null && node.right == null) return null;
+        //one child
+        else if(node.left != null && node.right == null) {
+            return node.left;
+        } else if(node.left == null && node.right != null) {
+            return node.right;
+        }
+        //two children
+        else {
+            TreeNode successorParent = node;
+            TreeNode successor = node.left;
+
+            while(successor.right != null) {
+                successorParent = successor;
+                successor = successor.right;
+            }
+
+            if(successorParent != node) {
+                successorParent.right = successor.left;
+                successor.left = node.left;
+            }
+
+            successor.right = node.right;
+
+            return successor;
+        }
+    }
+
+    public static class Pair<T, V> {
         T x;
         V y;
         public Pair(T x, V y) {
@@ -35,17 +95,17 @@ public class DeleteNodeInBST {
                 return root;
             }
 
-            boolean leftParent = false;
-            if(pair.y.left.val == pair.x.val) leftParent = true;
-            boolean leftCur = false;
-            if(pair.x.left != null) leftCur = true;
+            boolean leftToParent = false;
+            if(pair.y.left.val == pair.x.val) leftToParent = true;
+            boolean leftOfCur = false;
+            if(pair.x.left != null) leftOfCur = true;
 
-            if(leftParent) {
-                if(leftCur) pair.y.left = pair.x.left;
+            if(leftToParent) {
+                if(leftOfCur) pair.y.left = pair.x.left;
                 else pair.y.left = pair.x.right;
             }
             else {
-                if(leftCur) pair.y.right = pair.x.left;
+                if(leftOfCur) pair.y.right = pair.x.left;
                 else pair.y.right = pair.x.right;
             }
         }
@@ -103,19 +163,22 @@ public class DeleteNodeInBST {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(3);
-        root.left = new TreeNode(9);
-        root.right = new TreeNode(20);
-        root.right.left = new TreeNode(15);
-        root.right.right = new TreeNode(7);
+//        TreeNode root = new TreeNode(3);
+//        root.left = new TreeNode(9);
+//        root.right = new TreeNode(20);
+//        root.right.left = new TreeNode(15);
+//        root.right.right = new TreeNode(7);
         DeleteNodeInBST obj = new DeleteNodeInBST();
 //        root = obj.solve(root, 3);
 //        System.out.println(LevelOrderTraversal.levelOrder1(root));
 
         TreeNode root2 = new TreeNode(3);
         root2.left = new TreeNode(1);
-        root2 = obj.solve(root2, 3);
+        root2 = obj.solve2(root2, 3);
         System.out.println(LevelOrderTraversal.levelOrder1(root2));
+
+//        TreeNode root3 = new TreeNode(6);
+//        root3.left =
     }
 
 }

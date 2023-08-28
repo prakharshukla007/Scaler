@@ -51,6 +51,7 @@ public class VerticalOrder {
             if (keySet.contains(i)) {
                 ls = hm.get(i);
             }
+            assert ls != null;
             ans.add(ls.get(0));
         }
         return ans;
